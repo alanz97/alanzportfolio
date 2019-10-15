@@ -4,11 +4,12 @@
 # This code will replace all state initials with the full state name, this is useful for joining tables.
 
 import arcpy, os
+#The next 3 lines must be edited for each project
 arcpy.env.workspace = r'C:\Users\alanz\Documents\ArcGIS\Projects\MyProject4\MyProject4.gdb'
 
 fc= 'store_openings'
 field = ['STRSTATE']
-
+#End of editing, do not edit anything below this line
 with arcpy.da.UpdateCursor(fc,field) as cursor:
     for row in cursor:
         if row[0] == "AR":
