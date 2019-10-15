@@ -1,0 +1,76 @@
+# WARNING: The changes done to the data file (in the geodatabase) are permanent and are not just visual!
+# Be sure to update the code with the correct file directory!
+# This code will not work on text files, must be used on a file in the geodatabase!
+# This code will replace all state initials with the full state name, this is useful for joining tables.
+
+import arcpy, os
+arcpy.env.workspace = r'C:\Users\alanz\Documents\ArcGIS\Projects\MyProject4\MyProject4.gdb'
+
+fc= 'store_openings'
+field = ['STRSTATE']
+
+with arcpy.da.UpdateCursor(fc,field) as cursor:
+    for row in cursor:
+        if row[0] == "AR":
+            row[0] = "Arkansas"
+            cursor.updateRow(row)
+        elif row[0] == "GA":
+            row[0] = "Georgia"
+            cursor.updateRow(row)
+        elif row[0] == "AZ":
+            row[0] = "Arizona"
+            cursor.updateRow(row)
+        elif row[0] == "AK":
+            row[0] = "Alaska"
+            cursor.updateRow(row)
+        elif row[0] == "NY":
+            row[0] = "New York"
+            cursor.updateRow(row)
+       elif row[0] == "AL":
+            row[0] = "Alabama"
+            cursor.updateRow(row)
+       elif row[0] == "CA":
+            row[0] = "California"
+            cursor.updateRow(row)
+       elif row[0] == "CO":
+            row[0] = "Colorado"
+            cursor.updateRow(row)
+       elif row[0] == "CT":
+            row[0] = "Connecticut"
+            cursor.updateRow(row)
+       elif row[0] == "DE":
+            row[0] = "Delaware"
+            cursor.updateRow(row)
+       elif row[0] == "FL":
+            row[0] = "Florida"
+            cursor.updateRow(row)
+       elif row[0] == "HI":
+            row[0] = "Hawaii"
+            cursor.updateRow(row)
+       elif row[0] == "ID":
+            row[0] = "Idaho"
+            cursor.updateRow(row)
+       elif row[0] == "IL":
+            row[0] = "Illinois"
+            cursor.updateRow(row)
+       elif row[0] == "IN":
+            row[0] = "Indiana"
+            cursor.updateRow(row)
+       elif row[0] == "IA":
+            row[0] = "Iowa"
+            cursor.updateRow(row)
+       elif row[0] == "KS":
+            row[0] = "Kansas"
+            cursor.updateRow(row)
+       elif row[0] == "KY":
+            row[0] = "Kentucky"
+            cursor.updateRow(row)
+       elif row[0] == "LA":
+            row[0] = "Louisiana"
+            cursor.updateRow(row)
+       elif row[0] == "ME":
+            row[0] = "Maine"
+            cursor.updateRow(row)
+       elif row[0] == "MD":
+            row[0] = "Maryland"
+            cursor.updateRow(row)
